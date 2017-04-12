@@ -4,4 +4,23 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
+  <!--前端控制器-->
+  <servlet>
+    <servlet-name>console</servlet-name>
+    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+    <init-param>
+      <param-name>contextConfigLocation</param-name>
+      <param-value>classpath:springmvc-console.xml</param-value>
+    </init-param>
+      <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>console</servlet-name>
+    <!--
+    /     拦截除了.jsp之外的所有请求
+    /*    拦截所有
+    *.do  拦截.do结尾的请求
+    -->
+    <url-pattern>/</url-pattern>
+  </servlet-mapping>
 </web-app>

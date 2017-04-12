@@ -1,5 +1,5 @@
 import com.pingrong.core.bean.UserInfo;
-import com.pingrong.core.dao.UserInfoMapper;
+import com.pingrong.core.service.UserInfoService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,12 +13,12 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 @ContextConfiguration(locations = {"classpath:application-context.xml"})
 public class TestOne {
     @Autowired
-    private UserInfoMapper userInfoMapper;
+    private UserInfoService userInfoMapper;
     @Test
     public void tests() throws Exception{
         UserInfo userInfo = new UserInfo();
         userInfo.setAge(10);
         userInfo.setName("新来的");
-        userInfoMapper.insert(userInfo);
+        userInfoMapper.addUser(userInfo);
     }
 }

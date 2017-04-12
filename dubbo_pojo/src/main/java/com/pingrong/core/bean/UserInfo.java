@@ -1,9 +1,11 @@
 package com.pingrong.core.bean;
 
+import java.io.Serializable;
+
 /**
  * Created by Administrator on 2017/4/11.
  */
-public class UserInfo {
+public class UserInfo implements Serializable{
     private Long id;
 
     private String name;

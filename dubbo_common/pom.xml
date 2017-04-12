@@ -136,10 +136,21 @@
                 <groupId>org.slf4j</groupId>
                 <artifactId>slf4j-nop</artifactId>
             </dependency>
+
+            <!--dubbo-->
             <dependency>
-                <groupId>org.apache.tomcat</groupId>
-                <artifactId>jsp-api</artifactId>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-context</artifactId>
             </dependency>
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>dubbo</artifactId>
+            </dependency>
+            <dependency>
+                <groupId>com.101tec</groupId>
+                <artifactId>zkclient</artifactId>
+            </dependency>
+
         </dependencies>
     <!--导入包 结束-->
 </project>

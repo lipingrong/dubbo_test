@@ -21,7 +21,8 @@
             <artifactId>dubbo_inteface</artifactId>
             <groupId>com.pingrong</groupId>
             <version>1.0-SNAPSHOT</version>
-        </dependency><dependency>
+        </dependency>
+        <dependency>
             <artifactId>dubbo_dao</artifactId>
             <groupId>com.pingrong</groupId>
             <version>1.0-SNAPSHOT</version>
