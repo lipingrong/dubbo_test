@@ -21,14 +21,13 @@
         <module>dubbo_inteface</module>
         <!--业务层-->
         <module>dubbo_service</module>
-        <module>dubbo_console</module>
     </modules>
     <!--包版本控制-->
     <properties>
         <javaee-api-version>7.0</javaee-api-version>
-        <spring-test-version>4.2.0.RELEASE</spring-test-version>
-        <spring-webmvc-version>4.2.0.RELEASE</spring-webmvc-version>
-        <spring-core-version>4.2.0.RELEASE</spring-core-version>
+        <spring-test-version>4.3.7.RELEASE</spring-test-version>
+        <spring-webmvc-version>4.3.7.RELEASE</spring-webmvc-version>
+        <spring-core-version>4.3.7.RELEASE</spring-core-version>
         <jackson-databind-version>2.5.0</jackson-databind-version>
         <spring-context-support-version>4.2.0.RELEASE</spring-context-support-version>
         <mybatis-version>3.1.1</mybatis-version>
@@ -51,7 +50,7 @@
         <netty-all-version>4.1.6.Final</netty-all-version>
         <netty-version>3.2.5.Final</netty-version>
         <slf4j-nop-version>1.7.5</slf4j-nop-version>
-        <spring-context-version>4.2.0.RELEASE</spring-context-version>
+        <spring-context-version>4.3.7.RELEASE</spring-context-version>
         <dubbo-version>2.5.3</dubbo-version>
         <zkclient-version>0.7</zkclient-version>
         <!--<jsp-api-version>6.0.44</jsp-api-version>-->
@@ -70,6 +69,12 @@
                 <groupId>com.alibaba</groupId>
                 <artifactId>dubbo</artifactId>
                 <version>${dubbo-version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.springframework</groupId>
+                        <artifactId>spring</artifactId>
+                    </exclusion>
+                </exclusions>
             </dependency>
             <dependency>
                 <groupId>com.101tec</groupId>

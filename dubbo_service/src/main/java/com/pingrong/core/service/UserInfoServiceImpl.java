@@ -11,7 +11,7 @@ import java.util.ArrayList;
 /**
  * Created by Administrator on 2017/4/12.
  */
-@Service
+@Service("userInfoService")
 @Transactional
 public class UserInfoServiceImpl implements UserInfoService{
     @Autowired
