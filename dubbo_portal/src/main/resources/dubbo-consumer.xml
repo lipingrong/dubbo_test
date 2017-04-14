@@ -24,8 +24,15 @@
     <!--dubbo消费方-->
     <!--计算机名称-->
     <dubbo:application name="dubbo-consumer"/>
-    <!--设置注册中心 地址 zookeeperIP地址  多台IP地址用逗号隔开-->
-    <dubbo:registry address="192.168.200.128:2181" protocol="zookeeper"/>
+    <!--设置注册中心 地址 zookeeperIP地址 -->
+    <!--<dubbo:registry address="192.168.200.128:2181" protocol="zookeeper"/>-->
     <!--调用接口实现类 id为controller中注入的变量名称-->
-    <dubbo:reference interface="com.pingrong.core.service.UserInfoService" id="userInfoService"/>
+    <!--<dubbo:reference interface="com.pingrong.core.service.UserInfoService" id="userInfoService"/>-->
+    <!--设置全局属性,但registry的属性不能全局-->
+    <dubbo:consumer timeout="2000" check="false"/>
+
+    <!--单机版，开发使用-->
+    <!--设置不到注册中心获取接口,并且不检查接口-->
+    <dubbo:registry address="N/A" check="false"/>
+    <dubbo:reference interface="com.pingrong.core.service.UserInfoService" id="userInfoService" url="dubbo://127.0.0.1:20880"/>
 </beans>
