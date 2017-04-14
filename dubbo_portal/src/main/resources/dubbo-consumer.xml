@@ -23,7 +23,7 @@
     http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
     <!--dubbo消费方-->
     <!--计算机名称-->
-    <dubbo:application name="dubbo-service"/>
+    <dubbo:application name="dubbo-consumer"/>
     <!--设置注册中心 地址 zookeeperIP地址  多台IP地址用逗号隔开-->
     <dubbo:registry address="192.168.200.128:2181" protocol="zookeeper"/>
     <!--调用接口实现类 id为controller中注入的变量名称-->
