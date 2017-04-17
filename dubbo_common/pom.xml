@@ -14,6 +14,11 @@
 
     <!--导入包 开始-->
         <dependencies>
+            <!-- fastdfs-client -->
+            <dependency>
+                <groupId>com.github.tobato</groupId>
+                <artifactId>fastdfs-client</artifactId>
+            </dependency>
             <dependency>
                 <groupId>javax</groupId>
                 <artifactId>javaee-api</artifactId>
@@ -150,7 +155,23 @@
                 <groupId>com.101tec</groupId>
                 <artifactId>zkclient</artifactId>
             </dependency>
-
+            <!-- 反向工程 -->
+            <dependency>
+                <groupId>org.mybatis.generator</groupId>
+                <artifactId>mybatis-generator-core</artifactId>
+            </dependency>
         </dependencies>
     <!--导入包 结束-->
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.mybatis.generator</groupId>
+                <artifactId>mybatis-generator-maven-plugin</artifactId>
+                <configuration>
+                    <verbose>true</verbose>
+                    <overwrite>true</overwrite>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>
