@@ -14,6 +14,25 @@
 
     <!--导入包 开始-->
         <dependencies>
+            <!--activeMQ依赖包 -->
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-jms</artifactId>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.activemq</groupId>
+                <artifactId>activemq-all</artifactId>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.activemq</groupId>
+                <artifactId>activemq-pool</artifactId>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.solr</groupId>
+                <artifactId>solr-solrj</artifactId>
+            </dependency>
             <!-- fastdfs-client -->
             <dependency>
                 <groupId>com.github.tobato</groupId>
@@ -159,6 +178,11 @@
             <dependency>
                 <groupId>org.mybatis.generator</groupId>
                 <artifactId>mybatis-generator-core</artifactId>
+            </dependency>
+            <!--redis操作类，jedis-->
+            <dependency>
+                <groupId>redis.clients</groupId>
+                <artifactId>jedis</artifactId>
             </dependency>
         </dependencies>
     <!--导入包 结束-->

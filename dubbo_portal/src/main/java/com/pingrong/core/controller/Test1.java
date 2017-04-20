@@ -20,16 +20,13 @@ public class Test1 {
         return "index";
     }
     @RequestMapping(value = "/test/addUser")
-    public String haha(Model model){
-        UserInfo userInfo = new UserInfo();
-        userInfo.setName("我是dubbo");
-        userInfo.setAge(0);
+    public String haha(Model model,UserInfo userInfo){
         try {
             userInfoService.addUser(userInfo);
-        model.addAttribute("qq","成功");
+            model.addAttribute("qq","成功");
         } catch (Exception e) {
             e.printStackTrace();
-        model.addAttribute("qq","失败");
+            model.addAttribute("qq","失败");
         }
         return "index";
     }
