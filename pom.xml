@@ -23,6 +23,8 @@
         <module>dubbo_service</module>
         <!--solr-->
         <module>dubbo_solr</module>
+        <!--单点登录-->
+        <module>dubbo_login</module>
     </modules>
     <!--包版本控制-->
     <properties>
@@ -62,12 +64,37 @@
         <activemq-all-version>5.14.4</activemq-all-version>
         <activemq-pool-version>5.14.4</activemq-pool-version>
         <spring-jms-version>4.2.0.RELEASE</spring-jms-version>
+        <freemarker-version>2.3.23</freemarker-version>
         <!--<jsp-api-version>6.0.44</jsp-api-version>-->
     </properties>
 
     <!--引入包   开始-->
     <dependencyManagement><!--不强制依赖包-->
         <dependencies>
+            <!--onenet-->
+            <dependency>
+                 <groupId>org.json</groupId>
+                 <artifactId>json</artifactId>
+                 <version>20160212</version>
+             </dependency>
+             <dependency>
+                 <groupId>org.bouncycastle</groupId>
+                 <artifactId>bcprov-jdk15on</artifactId>
+                 <version>1.54</version>
+             </dependency>
+            <dependency>
+                <groupId>commons-codec</groupId>
+                <artifactId>commons-codec</artifactId>
+                <version>1.10</version>
+            </dependency>
+            <!--onenet 结束-->
+
+            <!-- freemarker静态页面支持 -->
+            <dependency>
+                <groupId>org.freemarker</groupId>
+                <artifactId>freemarker</artifactId>
+                <version>${freemarker-version}</version>
+            </dependency>
 
             <!--activeMQ依赖包 -->
             <dependency>

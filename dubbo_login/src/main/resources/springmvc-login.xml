@@ -1,26 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:mvc="http://www.springframework.org/schema/mvc"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
        xmlns:context="http://www.springframework.org/schema/context"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+        http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc.xsd
         http://www.springframework.org/schema/context
-        http://www.springframework.org/schema/context/spring-context-4.0.xsd
-        http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd ">
+        http://www.springframework.org/schema/context/spring-context-4.0.xsd">
     <import resource="dubbo-consumer.xml"/>
     <!--自动扫描 扫描到@controller @service等注解自动注册成bean-->
-    <context:component-scan base-package="com.pingrong.core.controller"/>
+    <context:component-scan base-package="com.pingrong.core"/>
     <!--处理器 映射器 适配器-->
-
+    <!--<mvc:annotation-driven conversion-service="conversionService"/>-->
 
     <!--视图解析器-->
     <!--<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver" p:prefix="/WEB-INF/views/" p:suffix=".jsp" />-->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver" >
-        <property name="prefix" value="/WEB-INF/views/"/>
+        <property name="prefix" value="/WEB-INF/login/"/>
         <property name="suffix" value=".jsp"/>
         <property name="order" value="1"/>
+    </bean>
+
+    <!-- 转换工厂 -->
+    <bean id="conversionService" class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
+        <!-- 去掉前后空格 -->
+        <property name="converters">
+            <list>
+                <bean class="com.pingrong.core.common.ConverterString"/>
+            </list>
+        </property>
     </bean>
 
     <!-- 支持上传文件 -->

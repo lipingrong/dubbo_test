@@ -17,17 +17,17 @@
     </filter-mapping>
   <!--前端控制器-->
     <servlet>
-        <servlet-name>console</servlet-name>
+        <servlet-name>login</servlet-name>
         <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
         <init-param>
             <param-name>contextConfigLocation</param-name>
-            <param-value>classpath:springmvc-console.xml</param-value>
+            <param-value>classpath:springmvc-login.xml</param-value>
         </init-param>
         <load-on-startup>1</load-on-startup>
     </servlet>
     <!--拦截所有请求-->
     <servlet-mapping>
-        <servlet-name>console</servlet-name>
+        <servlet-name>login</servlet-name>
         <url-pattern>/</url-pattern>
     </servlet-mapping>
     <!--不拦截的文件-->

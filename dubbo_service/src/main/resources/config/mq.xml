@@ -41,7 +41,9 @@
     <!-- 配置JMS模板，Spring提供的JMS工具类，它发送、接收消息。（Queue） -->
     <bean id="jmsTemplate" class="org.springframework.jms.core.JmsTemplate">
         <property name="connectionFactory" ref="connectionFactory"/>
-        <!--  -->
+        <!-- 传送数据到指定管道 -->
         <property name="defaultDestinationName" value="userName"/>
+        <!-- 设置MQ消息模式默false认点对点（消息队列模式），true为主题模式（订阅模式） -->
+        <property name="pubSubDomain" value="true"/>
     </bean>
 </beans>

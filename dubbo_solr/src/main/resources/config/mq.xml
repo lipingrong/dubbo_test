@@ -52,6 +52,8 @@
         <property name="destinationName" value="userName"/>
         <!--监听到之后调用内容-->
         <property name="messageListener" ref="messageSolr"/>
+        <!-- 设置MQ消息模式默认false点对点（消息队列模式），true为主题模式（订阅模式） -->
+        <property name="pubSubDomain" value="true"/>
     </bean>
     <!--处理类-->
     <bean id="messageSolr" class="com.pingrong.core.solr.MessageSolr"/>
