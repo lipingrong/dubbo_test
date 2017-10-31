@@ -23,6 +23,7 @@ public class LoginController {
     @RequestMapping(value = "login",method = RequestMethod.GET)
     public String loginPage(HttpServletRequest request, HttpServletResponse response){
         try {
+            //获取request中的cookie内容
             String csessionid = RequestUtils.getCSESSIONID(request, response);
             //保存到redis
             sessionProvider.setSession(csessionid,"shide");
